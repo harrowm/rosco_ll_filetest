@@ -7,6 +7,12 @@
 *.obj
 *.elf
 
+# ROSCO specific files
+*.dis
+*.bin
+*.sym
+test
+
 # Linker output
 *.ilk
 *.map
