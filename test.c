@@ -106,8 +106,12 @@ int kmain() {
     printf("crc32 of sector is %08x\n", c);
 
     for (int i=0; i<TIMES_TO_WRITE; i++) {
-        if ((i % 100) == 0) {
-            printf("%d ", i);
+        if (((i % 100) == 0) && (i != 0)) {
+            printf("%5d ", i);
+        }
+
+        if ((i % 500) == 0) {
+            printf("\n");
         }
         
         if (!SD_write_block(&sd, (uint32_t) (i+STARTSECTOR), dataset)) {
